@@ -59,11 +59,10 @@ router.patch("/users/:id", async (req, res) => {
       })
       // console.log("users : ", users)
       if (users.modifiedCount === 1) {
-        res.send({ message: 'berhasil diubah' })
+        res.send({ message: 'data berhasil diubah' })
       } else {
         res.send({ message: 'gagal mengubah' })
       }
-      res.send({ message: 'data berhasil diubah' });
     } else {
       res.send({ message: "Koneksi database gagal" });
     }
@@ -77,13 +76,12 @@ router.delete("/users/:id", async (req, res) => {
     if ((isConnected.connected = true)) {
       const { id } = req.params;
       const users = await db.collection("users").deleteOne({ _id: ObjectId(id) })
-      console.log("users : ", users)
-      // if (users.modifiedCount === 1) {
-      //   res.send({ message: 'berhasil diubah' })
-      // } else {
-      //   res.send({ message: 'gagal mengubah' })
-      // }
-      res.send({ message: 'data berhasil diubah' });
+      if (users.deletedCount === 1) {
+        res.send({ message: 'data berhasil dihapus' })
+      } else {
+        res.send({ message: 'data gagal dihapus' })
+      }
+      // console.log("users : ", users)
     } else {
       res.send({ message: "Koneksi database gagal" });
     }
