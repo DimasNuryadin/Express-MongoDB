@@ -1,14 +1,37 @@
 const mongoose = require('mongoose');
 
+// Fix Error
+mongoose.set("strictQuery", false);
+
 main().catch(err => console.log(err));
+
+// const userSchema = new mongoose.Schema({
+//   name: {
+//     type: String,
+//     required: [true, 'nama tidak boleh kosong!!!']
+//   },
+//   age: {
+//     type: Number,
+//     required: [true, 'age tidak boleh kosong!!!']
+//   },
+//   status: {
+//     type: String,
+//     enum: ['active', 'non active'],
+//     default: 'non active'
+//   }
+// });
+
+// const User = mongoose.model('users', userSchema);
 
 async function main() {
   // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
   await mongoose.connect('mongodb://127.0.0.1:27017/db_latihan');
 
+  console.log('Server database berhasil connect')
+
   // GET users
-  const users = await User.find();
-  console.log(users)
+  // const users = await User.find();
+  // console.log(users)
 
   // CREATE users
   // const newUser = await User.create({
@@ -40,21 +63,3 @@ async function main() {
   // const deleteUser = await User.deleteOne({ _id: '63cada7e9ffab5ee0e29c21c' })
   // console.log(deleteUser)
 }
-
-const userSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: [true, 'nama tidak boleh kosong!!!']
-  },
-  age: {
-    type: Number,
-    required: [true, 'age tidak boleh kosong!!!']
-  },
-  status: {
-    type: String,
-    enum: ['active', 'non active'],
-    default: 'non active'
-  }
-});
-
-const User = mongoose.model('User', userSchema);
