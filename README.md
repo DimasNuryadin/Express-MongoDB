@@ -1,1 +1,6 @@
-# Express-MongoDB
+# Latihan Express & MongoDB
+
+Menjalankan Sever
+```bash
+yarn dev
+```
