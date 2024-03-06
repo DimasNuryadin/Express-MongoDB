@@ -1,5 +1,7 @@
+// Membuat schema terpisah agar lebih rapih
 const mongoose = require('mongoose')
 
+// required : untuk validasi, jika valuenya kosong data tidak bisa dikirim
 const userSchema = new mongoose.Schema({
   name: {
     type: String,

@@ -2,7 +2,7 @@
 
 First install modules
 ```bash
-yarn dev
+yarn install
 ```
 
 Running Servers

@@ -1,3 +1,4 @@
+// File ini hanya untuk coba2 mongoose
 const mongoose = require('mongoose');
 
 // Fix Error
@@ -5,6 +6,7 @@ mongoose.set("strictQuery", false);
 
 main().catch(err => console.log(err));
 
+// required : untuk validasi, jika valuenya kosong data tidak bisa dikirim
 // const userSchema = new mongoose.Schema({
 //   name: {
 //     type: String,
@@ -63,3 +65,5 @@ async function main() {
   // const deleteUser = await User.deleteOne({ _id: '63cada7e9ffab5ee0e29c21c' })
   // console.log(deleteUser)
 }
+
+// File ini tidak di eksport karena hanya cukup dijalankan sekali
