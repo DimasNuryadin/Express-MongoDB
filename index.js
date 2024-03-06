@@ -9,6 +9,8 @@ const myLogger = function (req, res, next) {
 }
 
 app.use(myLogger)
+
+// Middleware, untuk memparsing req object pada body, sehingga mudah dibaca
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json());
 

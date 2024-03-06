@@ -1,6 +1,11 @@
 # Latihan Express & MongoDB
 
-Menjalankan Sever
+First install modules
+```bash
+yarn dev
+```
+
+Running Servers
 ```bash
 yarn dev
 ```
